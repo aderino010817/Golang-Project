@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #D6DADA;
+    margin-bottom: 10%;
+}
+
+nav {
+    display: flex;
+    background-color: whitesmoke;
+    height: 50px;
+    box-shadow: 0px 3px 3px 1px rgba(37, 37, 37, 0.247);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    gap: 22px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul img {
+    max-width: 55px;
+    width: 450%;
+    margin-top: 20%;
+    margin-left: -20px;
+    object-fit: contain;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li a:hover {
+    background-color: orangered;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}  
+
+nav ul li a:active {
+    font-weight: 800;
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 78%;
+}
+
+.form-contact {
+    background-color: black;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.contactme:hover {
+    background-color: orangered;
+    color: black;
+    font-weight: bold;
+}
+
+nav ul li .project {
+    width: fit-content;
+}
+
+.formtugas {
+    margin: auto;
+    width: 500px;
+    padding: 20px;
+}
+
+.formtugas h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formtugas .data label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.formtugas .data input[type="text"],
+.formtugas .data textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.formtugas .data .tanggal {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.formtugas .data .tech {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formtugas .data .tech .cb-kiri,
+.formtugas .data .tech .cb-kanan {
+    display: flex;
+    flex-direction: column;
+}
+
+.formtugas .data .tech .cb-kiri label,
+.formtugas .data .tech .cb-kanan label {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.formtugas .data .upload-img input[type="file"] {
+        display: flex;
+        background-color: white;
+        border-radius: 0.3rem;
+}
+
+.formtugas .data button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+   white;
+    border: none;
+    cursor: pointer;
+}
+
+.content-tugas h1 {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.content-tugas .project {
+    display: flex;
+    flex-direction: row;
+}
+
+.project .project1 {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 300px;
+    margin-left: 70px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.project1 img {
+    max-width: 350px;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+.upload-image input{
+    display: flex;
+    background-color: white;
+    border-radius: 1%;
+    width: 500px;
+}
+
+.upload-inline .upload-image {
+    display: inline-block;
+    background-color: lightgrey;
+    color: rgb(88, 88, 88);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.upload-inline {
+    display: inline-flex;
+    flex-direction: row;;
+
+}
+
+.button-upload {
+    max-width: 20px;
+    height: 20px;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: end;
+}
+
+.submit button {
+    border-radius: 20px;
+    width: 100px;
+}
+
+
+nav ul li .project {
+    width: fit-content;
+}
+
+nav .iconburger i {
+  display: none;
+}
+
+.nav-right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 78%;
+}
+
+
+nav .tutupan li {
+  list-style-type: none;
+}
+
+nav .tutupan .icondw img {
+  max-width: 55px;
+  width: 450%;
+  margin-top: 20%;
+  margin-left: -20px;
+  object-fit: contain;
+}
+
+nav .tutupan li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav .tutupan li a:hover {
+  background-color: orangered;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 5px;
+  border-radius: 5px;
+  text-decoration: none;
+} 
+
+nav .tutupan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  gap: 22px;
+}
+
+nav{
+  display: flex;
+  background-color: whitesmoke;
+  height: 50px;
+  box-shadow: 0px 3px 3px 1px rgba(37, 37, 37, 0.247);
+}
+
+.bukabungkus {
+  display: none;
+}
+
+.iiconburger i {
+  display: none;
+}
+
+@media only screen and (max-width: 1120px) {
+    body .card-info {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-left: 13%;
+     margin-right: 13%;
+    }
+
+    .card-info .social-media {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 7%;
+        padding-left: 37%;
+    }
+    .card-info .deskripsi h1, .card-info .deskripsi p {
+        text-align: center;
+    }
+    .card-info .deskripsi .inline-button .contact, .card-info .deskripsi .inline-button .cv {
+        margin-left: 20%;
+    }
+    body nav .tutupan li a, nav div .btncontact {
+        display: none;
+    }
+    nav .tutupan {
+        margin-left: 7%;
+    }
+
+  .bungkus {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+
+  .bukabungkus {
+    display: flex;
+    flex-direction: column;
+    background-color: #b7b9b9;
+    border: 2px solid rgba(0, 0, 0, 0.397);
+    box-shadow: 5px 5px 5px 1px;
+  }
+
+  .bukabungkus .ulbuka .bungkus {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.bukabungkus .ulbuka .bungkus a:hover {
+    background-color: orangered;
+    transform: scale(1.1);
+}
+
+  .bukabungkus .ulbuka .bungkus a {
+    text-decoration: none;
+    color: #111727;
+    background-color: #b7b9b9;
+  }
+  
+  body .bukabungkus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-info .deskripsi h1 {
+    font-size: 35px;
+  }
+
+  .card-info .deskripsi p {
+    font-size: 18px;
+  }
+  .card-info .deskripsi .inline-button .contact button, .card-info .deskripsi .inline-button .cv {
+    font-size: 17px;
+  }
+  .foto img {
+    max-width: 350px;
+  }
+  .foto h3 {
+    font-size: 24px;
+  }
+  .foto p {
+    font-size: 21px;
+  }
+
+  .bukabungkus .ulbuka li a, .bukabungkus .ulbuka li a button {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    width: max-content;
+    align-items: center;
+  }
+
+  .iiconburger, .iiconburger .fa-burger {
+    display: flex;
+    flex-direction: row;
+    margin-inline-start: auto;
+    margin-right: 10%;
+    margin-top: 1%;
+  }
+
+  .bukabungkus .ulbuka {
+    display: none;
+    flex-direction: column;
+  }
+
+}

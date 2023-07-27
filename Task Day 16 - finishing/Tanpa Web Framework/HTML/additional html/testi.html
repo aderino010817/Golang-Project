@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial - Task 12</title>
+    <link rel="stylesheet" href="../css/testi.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="https://kit.fontawesome.com/fb6ef1ee99.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <ul class="tutupan">
+            <li class="icondw">
+                <img src="../icon/dumbways.png">
+            </li>
+            <li class="bungkus home">
+                <a href="../home.html">Home</a>
+            </li>
+            <li class="bungkus project">
+                <a href="../additional html/myproject.html">My Project</a>
+            </li>
+            <li class="bungkus testi">
+                <a href="../additional html/myproject.html">Testimonials</a>
+            </li>
+        </ul>    
+        <div class="nav-right bungkus">
+            <a href="../additional html/contact.html" class="btncontact contactme"><button class="form-contact"> Contact Me </button></a>
+        </div> 
+        <a href="javascript:void(0);" class="iiconburger" onclick="bukacok()">
+            <i class="fa-solid fa-burger"></i>
+        </a>
+    </nav>
+    <div class="bukabungkus">
+        <ul class="ulbuka" id="ulbuka">
+            <li class="bungkus homeopen">
+                <a href="../home.html">Home</a>
+            </li>
+            <li class="bungkus projectopen">
+                <a href="../additional html/myproject.html">My Project</a>
+            </li>
+            <li class="bungkus testiopen">
+                <a href="../additional html/testi.html">Testimonials</a>
+            </li>
+            <li class="nav-right bungkus">
+                <a href="../additional html/contact.html" class="btncontact"><button class="form-contact contactme"> Contact Me </button></a>
+            </li> 
+        </ul>    
+    </div>
+    <div class="parent-testimonial" style="text-align: center;">
+        <h1>MY TESTIMONIAL</h1>
+        <h4>Sort Commentaries by Stars</h4>
+        <div id="stars-buttons" class="stars-buttons">
+          <button onclick="showAll()">All</button>
+          <button onclick="stars(1)">
+            1 <i class="fa-solid fa-star fa-fw"></i>
+          </button>
+          <button onclick="stars(2)">
+            2 <i class="fa-solid fa-star fa-fw"></i>
+          </button>
+          <button onclick="stars(3)">
+            3 <i class="fa-solid fa-star fa-fw"></i>
+          </button>
+          <button onclick="stars(4)">
+            4 <i class="fa-solid fa-star fa-fw"></i>
+          </button>
+          <button onclick="stars(5)">
+            5 <i class="fa-solid fa-star fa-fw"></i>
+          </button>
+        </div>
+        <div class="container-testimonial" id="container-testimonials">
+        </div>
+      </div>
+    <!-- <script src="../Script/testi.js"></script> -->
+    <script src="../script/ajax.js"></script>
+    <script src="../script/nav.js"></script>
+</body>
+</html>

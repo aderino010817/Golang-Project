@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="../image/rino.jpg">
+        <link rel="stylesheet" href="../css/myproject.css">
+        <link rel="stylesheet" href="../css/nav.css">
+        <title>Task Day 12 - Aderino Arya Nanda</title>
+        <script src="https://kit.fontawesome.com/0b298a5b24.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav>
+            <ul class="tutupan">
+                <li class="icondw">
+                    <img src="../icon/dumbways.png">
+                </li>
+                <li class="bungkus home">
+                    <a href="../home.html">Home</a>
+                </li>
+                <li class="bungkus project">
+                    <a href="../additional html/myproject.html">My Project</a>
+                </li>
+                <li class="bungkus testi">
+                    <a href="../additional html/testi.html">Testimonials</a>
+                </li>
+            </ul>    
+            <div class="nav-right bungkus">
+                <a href="../additional html/contact.html" class="btncontact"><button class="form-contact contactme"> Contact Me </button></a>
+            </div> 
+            <a href="javascript:void(0);" class="iiconburger" onclick="bukacok()">
+                <i class="fa-solid fa-burger"></i>
+            </a>
+        </nav>
+        <div class="bukabungkus">
+            <ul class="ulbuka" id="ulbuka">
+                <li class="bungkus homeopen">
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="bungkus projectopen">
+                    <a href="../additional html/myproject.html">My Project</a>
+                </li>
+                <li class="bungkus testiopen">
+                    <a href="../additional html/myproject.html">Testimonials</a>
+                </li>
+                <li class="nav-right bungkus">
+                    <a href="../additional html/contact.html" class="btncontact"><button class="form-contact contactme"> Contact Me </button></a>
+                </li> 
+            </ul>    
+        </div>
+        <div class="formtugas">
+            <form onsubmit="addProject(event)" id="addtugas" autocomplete="off">
+                <h1>ADD MY PROJECT</h1>
+                <div class="data">
+                    <label for="nama-project">Project Name <input id="nama-project" /></label>
+                    <div class="tanggal">
+                        <label for="start-date" class="start-date">Start Date <input id="start-date" type="date" style="margin-right: 11px; width: 214px;"/></label>
+                        <label for="end-date" class="end-date">End Date <input id="end-date" type="date" style="width: 214px;"/></label>
+                    </div>
+                    <label for="deskripsi-tugas" class="deskripsi">Description <textarea id="deskripsi-tugas"></textarea></label>
+                    <div class="tech"> 
+                        <div class="cb-kiri">
+                            <label for="node" class="node"><input id="node" type="checkbox" class="multi123" style="margin-right: 8px;"/> Node Js</label>
+                            <label for="react" class="react"><input id="react" type="checkbox" class="multi123" style="margin-right: 8px;" /> React Js</label>
+                        </div>
+                        <div class="cb-kanan">
+                            <label id="next" class="next"><input for="next" type="checkbox" class="multi123" class="multi123" style="margin-right: 8px;" /> Next JS</label>
+                            <label id="typescript" class="typescript"><input for="typescript" type="checkbox" class="multi123" class="multi123" style="margin-right: 8px;" /> TypeScript</label>
+                        </div>
+                    </div>
+                <div class="upload-inline">
+                    <label for="upload-img" class="upload-image">Upload Image <input type="file" id="upload-img" accept="image/jpeg, image/png"/></label>
+                </div>    
+                <a class="submit"><button style="background-color: #111727; color: white;">Submit</button></a>
+                </div>
+            </form>
+        </div>
+        <div id="content" class="content-tugas">
+            <h1>MY PROJECT</h1>
+            <div class="project">
+                <div class="project1">
+                        <img src="../image/rino.jpg"/>
+                        <h3>"Cuan for life" is my way - Rino</h3>
+                        <h5>Durasi: 3 bulan</h5>
+                        <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum cum aut dolorum explicabo voluptas quos nam sequi, quam assumenda ratione molestiae doloremque quibusdam laboriosam iusto rem natus facilis totam.</h5>
+                        <div class="icon">
+                            <i class="fa-brands fa-google-play"></i>
+                            <i class="fa-brands fa-android"></i>
+                            <i class="fa-brands fa-java"></i>
+                        </div>
+                        <div class="btn">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <script src="../Script/Script.js"></script>
+        <script src="../Script/nav.js"></script>
+    </body>
+</html>

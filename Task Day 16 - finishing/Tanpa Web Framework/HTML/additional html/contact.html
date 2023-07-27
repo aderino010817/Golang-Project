@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact me - Aderino Arya Nanda</title>
+    <link rel="icon" type="image/x-icon" href="../image/rino.jpg">
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <script src="https://kit.fontawesome.com/72fa450e00.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <ul class="tutupan">
+            <li class="icondw">
+                <img src="../icon/dumbways.png">
+            </li>
+            <li class="bungkus home">
+                <a href="../home.html">Home</a>
+            </li>
+            <li class="bungkus project">
+                <a href="../additional html/myproject.html">My Project</a>
+            </li>
+            <li class="bungkus testi">
+                <a href="../additional html/testi.html">Testimonials</a>
+            </li>
+        </ul>    
+        <div class="nav-right bungkus">
+            <a href="../additional html/contact.html" class="btncontact"><button class="form-contact contactme"> Contact Me </button></a>
+        </div> 
+        <a href="javascript:void(0);" class="iiconburger" onclick="bukacok()">
+            <i class="fa-solid fa-burger"></i>
+        </a>
+    </nav>
+    <div class="bukabungkus">
+        <ul class="ulbuka" id="ulbuka">
+            <li class="bungkus homeopen">
+                <a href="../index.html">Home</a>
+            </li>
+            <li class="bungkus projectopen">
+                <a href="../additional html/myproject.html">My Project</a>
+            </li>
+            <li class="bungkus testiopen">
+                <a href="../additional html/myproject.html">Testimonials</a>
+            </li>
+            <li class="nav-right bungkus">
+                <a href="../additional html/contact.html" class="btncontact"><button class="form-contact contactme"> Contact Me </button></a>
+            </li> 
+        </ul>    
+    </div>
+    <h1 class="title">GET IN TOUCH</h1>
+    <div class="input-container">
+        <form action="submit" class="form-container">
+            <label for="name">Name</label>
+            <input id="name">
+            <label for="email">Email</label>
+            <input id="email">
+            <label for="nomor">Phone Number</label>
+            <input id="nomor">
+            <label for="subject">Subject</label>      
+            <select id="subject" class="select">
+                <option selected disabled></option>
+                <option>Lowongan Kerja</option>
+                <option>Pengajuan Kerja sama</option>
+                <option>Investasi</option>
+                <option>Donasi</option>
+            </select>
+            <label>Your message</label>
+            <textarea id="message-pesan" class="curahanhati"></textarea>
+            <div class="colok">
+                <button type="button" class="konfirmasi submit" onclick="iniDatanya()">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="../Script/Contact.js"></script>
+    <script src="../Script/nav.js"></script>
+</body>
+</html>

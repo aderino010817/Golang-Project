@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+
+    margin:0 ;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stars-buttons button {
+  color: white;
+  background-color: #111727;
+}
+
+.parent-testimonial {
+    margin: 2em;
+  }
+  
+  .parent-testimonial h1 {
+    margin: 0; 
+    text-align: center;
+    padding: 1em;
+  }
+  
+  .container-testimonial {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 1.3em;
+  }
+  
+  .div-testi {
+    width: 22em;
+    height: 18em;
+    padding: 1em;
+  }
+  
+  .div-testi img {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 3px 8px 1px;
+  }
+
+  .div-testi .quote {
+    text-align: center;
+  }
+  
+  .div-testi:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
+  }
+  
+  .div-testi p {
+    font-size: small;
+  }
+  
+  .div-testi .author {
+    font-weight: bolder;
+    text-align: end;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .container-testimonial {
+      grid-template-columns: repeat(2, 0.1fr);
+    }
+    .div-testi {
+      width: 20em;
+    }
+
+    .iiconburger, .iiconburger .fa-burger {
+      display: flex;
+      flex-direction: row;
+      margin-inline-start: auto;
+      margin-right: 10%;
+      margin-top: 1%;
+    }
+  }
+  
+  @media only screen and (max-width: 750px) {
+    .container-testimonial {
+      grid-template-columns: repeat(1, 0.1fr);
+    }
+    .iiconburger, .iiconburger .fa-burger {
+      display: flex;
+      flex-direction: row;
+      margin-inline-start: auto;
+      margin-right: 10%;
+      margin-top: 1%;
+    }
+  }
+  
+  @media only screen and (max-width: 395px) {
+    .div-testi {
+      width: 18em;
+      height: 18em;
+    }
+    .iiconburger, .iiconburger .fa-burger {
+      display: flex;
+      flex-direction: row;
+      margin-inline-start: auto;
+      margin-right: 10%;
+      margin-top: 1%;
+    }
+  }
+
+.form-contact {
+    background-color: #111727;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    
+}
+
+.tutupan .project, .tutupan .project a {
+    width: max-content;
+}
+
+.contactme:hover{
+    background-color: orangered;
+  color: #111727;
+  font-weight: bold;
+
+}
+
+.contact button {
+    background-color: #111727;
+    color: white;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+body .bukabungkus {
+    display: none;
+}
+
+
+nav ul li .project {
+    width: fit-content;
+}
+
+nav .iconburger i {
+  display: none;
+}
+
+.nav-right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 78%;
+}
+
+
+nav .tutupan li {
+  list-style-type: none;
+}
+
+nav .tutupan .icondw img {
+  max-width: 55px;
+  width: 450%;
+  margin-top: 20%;
+  margin-left: -20px;
+  object-fit: contain;
+}
+
+nav .tutupan li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav .tutupan li a:hover {
+  background-color: orangered;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 5px;
+  border-radius: 5px;
+  text-decoration: none;
+} 
+
+nav .tutupan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  gap: 22px;
+}
+
+nav{
+  display: flex;
+  background-color: whitesmoke;
+  height: 50px;
+  box-shadow: 0px 3px 3px 1px rgba(37, 37, 37, 0.247);
+}
+
+.iiconburger {
+  display: none;
+}
+
+.gambarhtmljs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  max-width: 350px;
+  max-height: 250px;
+  margin-top: 4%;
+}
+
+.div-testi {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  max-width: 350px;
+  width: 300px;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(68, 67, 67, 0.425);
+  box-shadow: 5px 8px 15px 1px;
+  border-radius: 10px;
+}  */
+
+@media only screen and (max-width: 1120px) {
+    body .card-info {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-left: 13%;
+     margin-right: 13%;
+    }
+
+    .card-info .social-media {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 7%;
+        padding-left: 37%;
+    }
+    .card-info .deskripsi h1, .card-info .deskripsi p {
+        text-align: center;
+    }
+    .card-info .deskripsi .inline-button .contact, .card-info .deskripsi .inline-button .cv {
+        margin-left: 20%;
+    }
+    body nav .tutupan li a, nav div .btncontact {
+        display: none;
+    }
+    nav .tutupan {
+        margin-left: 7%;
+    }
+
+  .bungkus {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+
+  .bukabungkus {
+    display: flex;
+    flex-direction: column;
+    background-color: #b7b9b9;
+    border: 2px solid rgba(0, 0, 0, 0.397);
+    box-shadow: 5px 5px 5px 1px;
+  }
+
+  .bukabungkus .ulbuka .bungkus {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.bukabungkus .ulbuka .bungkus a:hover {
+    background-color: orangered;
+    transform: scale(1.1);
+}
+
+  .bukabungkus .ulbuka .bungkus a {
+    text-decoration: none;
+    color: #111727;
+    background-color: #b7b9b9;
+  }
+  
+  body .bukabungkus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-info .deskripsi h1 {
+    font-size: 35px;
+  }
+
+  .card-info .deskripsi p {
+    font-size: 18px;
+  }
+  .card-info .deskripsi .inline-button .contact button, .card-info .deskripsi .inline-button .cv {
+    font-size: 17px;
+  }
+  .foto img {
+    max-width: 350px;
+  }
+  .foto h3 {
+    font-size: 24px;
+  }
+  .foto p {
+    font-size: 21px;
+  }
+
+  .bukabungkus .ulbuka li a, .bukabungkus .ulbuka li a button {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    width: max-content;
+    align-items: center;
+  }
+
+  .iiconburger, .iiconburger .fa-burger {
+    display: flex;
+    flex-direction: row;
+    margin-inline-start: auto;
+    margin-right: 10%;
+    margin-top: 1%;
+  }
+
+  .bukabungkus .ulbuka {
+    display: none;
+    flex-direction: column;
+  }
+
+}
