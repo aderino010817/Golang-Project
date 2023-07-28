@@ -29,7 +29,7 @@ type Project struct {
 	Javascript  bool
 	Image       string
 	Technology  []string
-	author      string
+	author      int
 	LoginName   bool
 }
 
@@ -82,6 +82,7 @@ func main() {
 
 	// Server(akan mengirimkan pesan fatal dan menghentikan eksekusi program)
 	e.Logger.Fatal(e.Start("localhost:8000"))
+
 }
 
 func helloWorld(c echo.Context) error {
@@ -264,7 +265,7 @@ func projectDetail(c echo.Context) error {
 
 	ProjectDetail := Project{}
 
-	errQuery := connection.Conn.QueryRow(context.Background(), "SELECT * FROM tb_project WHERE id=$1", idToInt).Scan(&ProjectDetail.Id, &ProjectDetail.ProjectName, &ProjectDetail.Description, &ProjectDetail.Image, &ProjectDetail.StartDate, &ProjectDetail.EndDate, &ProjectDetail.Technology)
+	errQuery := connection.Conn.QueryRow(context.Background(), "SELECT tb_project.id, project_name, description, image, start_date, end_date, technology FROM tb_project LEFT JOIN tb_akun ON tb_project.author_id = tb_akun.id WHERE tb_project.id=$1", idToInt).Scan(&ProjectDetail.Id, &ProjectDetail.ProjectName, &ProjectDetail.Description, &ProjectDetail.Image, &ProjectDetail.StartDate, &ProjectDetail.EndDate, &ProjectDetail.Technology)
 
 	if errQuery != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())

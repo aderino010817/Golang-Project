@@ -140,13 +140,13 @@
     <div class="container-xl container-md-fluid d-flex flex-column py-5">
       <h1 class="fw-bold text-center">MY PROJECT</h1>
       <div class="d-flex flex-wrap gap-5 justify-content-center my-5">
-        {{range $index, $data := .Projects}} 
+        {{range $data := .Projects}} 
         {{if $data.ProjectName}}
         <div class="card card-project">
           <img src="public/images/{{$data.Image}}" alt="" />
           <div class="card-title">
             <p class="card-title fs-6 fw-bold mb-0">
-              <a href="project/{{$index}}" target="_blank"
+              <a href="project/{{$data.Id}}" target="_blank"
                 >{{$data.ProjectName}}</a
               >
             </p>
@@ -169,7 +169,7 @@
             > {{if $.FlashStatus}}
               <form
                 class="d-inline"
-                action="/edit-project/{{$index}}"
+                action="/edit-project/{{$data.Id}}"
                 method="GET"
                 style="width: 100%"
               >
@@ -177,7 +177,7 @@
               </form>
               <form
                 class="d-inline"
-                action="/delete-project/{{$index}}"
+                action="/delete-project/{{$data.Id}}"
                 method="POST"
                 style="width: 100%"
               >
@@ -195,7 +195,7 @@
           <img src="public/images/{{$data.Image}}" alt="" />
           <div class="card-title">
             <p class="card-title fs-6 fw-bold mb-0">
-              <a href="project/{{$index}}" target="_blank"
+              <a href="project/{{$data.Id}}" target="_blank"
                 >{{$data.ProjectName}}</a
               >
             </p>
@@ -218,7 +218,7 @@
             > {{if $.FlashStatus}}
               <form
                 class="d-inline"
-                action="/edit-project/{{$index}}"
+                action="/edit-project/{{$data.Id}}"
                 method="GET"
                 style="width: 100%"
               >
@@ -226,7 +226,7 @@
               </form>
               <form
                 class="d-inline"
-                action="/delete-project/{{$index}}"
+                action="/delete-project/{{$data.Id}}"
                 method="POST"
                 style="width: 100%"
               >
