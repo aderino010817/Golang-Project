@@ -23,7 +23,7 @@ async function showAll() {
 
   let testimonialHTML = "";
   cardData.forEach((item) => {
-    testimonialHTML += `<div class="card-testimonial">
+    testimonialHTML += `<div class="card-testimonial" style="box-shadow:2px 2px 9px 2px;">
                             <img
                                 src="${item.image}"
                                 class="profile-testimonial"

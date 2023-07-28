@@ -23,7 +23,7 @@
     />
   </head>
   <body class="bg-body-tertiary">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary px-4 py-3">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-4 py-3" style="box-shadow: 2px 2px 9px 2px;">
       <div class="container-fluid">
         <a class="navbar-brand" href="https://dumbways.id/" target="_blank">
           <img src="public/images/logo.png" />
@@ -116,7 +116,7 @@
 
           <div
             class="card justify-content-center"
-            style="width: 18em; flex: 30%"
+            style="width: 18em; flex: 30%; box-shadow: 1.4px 2px 9px 3px;"
           >
             <img
               class="card-img-top"
@@ -142,7 +142,7 @@
       <div class="d-flex flex-wrap gap-5 justify-content-center my-5">
         {{range $data := .Projects}} 
         {{if $data.ProjectName}}
-        <div class="card card-project">
+        <div class="card card-project" style="box-shadow: 3px 3px 5px 2px;">
           <img src="public/images/{{$data.Image}}" alt="" />
           <div class="card-title">
             <p class="card-title fs-6 fw-bold mb-0">
@@ -150,7 +150,7 @@
                 >{{$data.ProjectName}}</a
               >
             </p>
-            <div class="card-duration">durasi: {{$data.Duration}}</div>
+            <div class="card-duration">Created by : [<em>{{$.FlashName}}</em>]<br>durasi: {{$data.Duration}}</div>
             <p class="card-text my-2 text-truncate">{{$data.Description}}</p>
             <div class="d-flex gap-4 my-3" style="width: 100%">
               {{if $data.ReactJs}}
