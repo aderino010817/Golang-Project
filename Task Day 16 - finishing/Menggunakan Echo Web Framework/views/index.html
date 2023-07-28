@@ -140,7 +140,8 @@
     <div class="container-xl container-md-fluid d-flex flex-column py-5">
       <h1 class="fw-bold text-center">MY PROJECT</h1>
       <div class="d-flex flex-wrap gap-5 justify-content-center my-5">
-        {{range $index, $data := .Projects}}
+        {{range $index, $data := .Projects}} 
+        {{if $data.ProjectName}}
         <div class="card card-project">
           <img src="public/images/{{$data.Image}}" alt="" />
           <div class="card-title">
@@ -165,7 +166,7 @@
             <div
               class="btn-card-index d-flex justify-content-center gap-2"
               style="width: 100%"
-            >
+            > {{if $.FlashStatus}}
               <form
                 class="d-inline"
                 action="/edit-project/{{$index}}"
@@ -182,10 +183,67 @@
               >
                 <button class="btn btn-dark" style="width: 100%">delete</button>
               </form>
+              {{else}}
+              <div style="display: none;"></div>
+              {{end}}
             </div>
           </div>
         </div>
-        {{end}}
+        {{else}}
+        {{if $.dataSession.NotLogin}}
+        <div class="card card-project">
+          <img src="public/images/{{$data.Image}}" alt="" />
+          <div class="card-title">
+            <p class="card-title fs-6 fw-bold mb-0">
+              <a href="project/{{$index}}" target="_blank"
+                >{{$data.ProjectName}}</a
+              >
+            </p>
+            <div class="card-duration">durasi: {{$data.Duration}}</div>
+            <p class="card-text my-2 text-truncate">{{$data.Description}}</p>
+            <div class="d-flex gap-4 my-3" style="width: 100%">
+              {{if $data.ReactJs}}
+              <i class="fa-brands fa-react fa-2x"></i>
+              {{end}} {{if $data.NodeJs}}
+              <i class="fa-brands fa-node-js fa-2x"></i>
+              {{end}} {{if $data.Javascript}}
+              <i class="fa-brands fa-square-js fa-2x"></i>
+              {{end}} {{if $data.Golang}}
+              <i class="fa-brands fa-golang fa-2x"></i>
+              {{end}}
+            </div>
+            <div
+              class="btn-card-index d-flex justify-content-center gap-2"
+              style="width: 100%"
+            > {{if $.FlashStatus}}
+              <form
+                class="d-inline"
+                action="/edit-project/{{$index}}"
+                method="GET"
+                style="width: 100%"
+              >
+                <button class="btn btn-dark" style="width: 100%">edit</button>
+              </form>
+              <form
+                class="d-inline"
+                action="/delete-project/{{$index}}"
+                method="POST"
+                style="width: 100%"
+              >
+                <button class="btn btn-dark" style="width: 100%">delete</button>
+              </form>
+              {{else}}
+              <div style="display: none;"></div>
+              {{end}}
+            </div>
+          </div>
+          {{else}}
+          <div style="display: none;"></div>
+          {{end}}
+          {{end}}
+          {{end}}
+        </div>
+   
 
         <!-- <div class="card card-project">
           <img src="public/images/img2.png" alt="" />

@@ -29,7 +29,7 @@ type Project struct {
 	Javascript  bool
 	Image       string
 	Technology  []string
-	Author      string
+	author      string
 	LoginName   bool
 }
 
@@ -43,7 +43,7 @@ type User struct {
 type SessionData struct {
 	isLogin  bool
 	name     string
-	NotLogin string
+	NotLogin bool
 }
 
 var userData = SessionData{}
@@ -107,22 +107,25 @@ func register(c echo.Context) error {
 }
 
 func home(c echo.Context) error {
+	// var userData = SessionData{}
+
 	tmpl, err := template.ParseFiles("views/index.html")
 	var user User
 
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
-	data, _ := connection.Conn.Query(context.Background(), "SELECT tb_project.id, project_name AS author, description, image, start_date, end_date, technologies FROM tb_project LEFT JOIN tb_akun ON tb_project.author = tb_akun.id ORDER BY tb_project.id DESC;")
+	data, _ := connection.Conn.Query(context.Background(), "SELECT tb_project.id, project_name, description, image, start_date, end_date, technology, author_id FROM tb_project LEFT JOIN tb_akun ON tb_project.author_id = tb_akun.id ORDER BY tb_project.id DESC;")
 
 	dataProjects := []Project{}
 	for data.Next() {
 		var each = Project{}
 
-		err := data.Scan(&each.Id, &each.ProjectName, &each.Description, &each.Image, &each.StartDate, &each.EndDate, &each.Technology, &each.Author)
+		err := data.Scan(&each.Id, &each.ProjectName, &each.Description, &each.Image, &each.StartDate, &each.EndDate, &each.Technology, &each.author)
 
 		if err != nil {
 			return c.JSON(http.StatusInternalServerError, err.Error())
+			// fmt.Println(err)
 		}
 
 		each.Duration = countDuration(each.StartDate, each.EndDate)
@@ -388,7 +391,7 @@ func submitProject(c echo.Context) error {
 	technoNodeJs := c.FormValue("NodeJs")
 	author := session.Values["id"]
 
-	_, err := connection.Conn.Exec(context.Background(), "INSERT INTO tb_project (project_name, description, image, start_date, end_date, technology[1], technology[2], technology[3], technology[4], author_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)", title, content, image, startdate, enddate, technoReactJs, technoJavascript, technoGolang, technoNodeJs, author)
+	_, err := connection.Conn.Exec(context.Background(), "INSERT INTO tb_project (project_name, description, image, start_date, end_date, technology[1], technology[2], technology[3], technology[4], author_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", title, content, image, startdate, enddate, technoReactJs, technoJavascript, technoGolang, technoNodeJs, author)
 
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, err.Error())
@@ -410,6 +413,7 @@ func submitEditedProject(c echo.Context) error {
 	technoJavascript := c.FormValue("Javascript")
 	technoGolang := c.FormValue("Golang")
 	technoNodeJs := c.FormValue("NodeJs")
+	// author := session.Values["id"]
 
 	_, err := connection.Conn.Exec(context.Background(), "UPDATE tb_project SET project_name=$1, description=$2, image=$7, start_date=$8, end_date=$9, technology[1]=$3, technology[2]=$4, technology[3]=$5, technology[4]=$6, WHERE id=$10", title, content, image, startdate, enddate, id, technoReactJs, technoJavascript, technoGolang, technoNodeJs)
 
