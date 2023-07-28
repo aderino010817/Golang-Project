@@ -74,6 +74,7 @@
       <div class="container bg-light">
         <div
           class="card-body p-md-5 d-flex align-items-center flex-lg-row flex-sm-column flex-column"
+          style="box-shadow: 2px 4px 9px 4px; border: 1px solid black; border-radius: 10px;"
         >
           <div class="container-index align-items-center" style="flex: 70%">
             <h1 class="fw-bold">Welcome to my Hut</h1>
@@ -143,7 +144,7 @@
         {{range $data := .Projects}} 
         {{if $data.ProjectName}}
         <div class="card card-project" style="box-shadow: 3px 3px 5px 2px;">
-          <img src="public/images/{{$data.Image}}" alt="" />
+          <img src="uploads/{{$data.Image}}" alt="" />
           <div class="card-title">
             <p class="card-title fs-6 fw-bold mb-0">
               <a href="project/{{$data.Id}}" target="_blank"

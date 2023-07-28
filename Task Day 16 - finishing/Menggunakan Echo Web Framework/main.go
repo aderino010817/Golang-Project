@@ -2,6 +2,7 @@ package main
 
 import (
 	"b48s1/connection"
+	"b48s1/middleware"
 	"context"
 	"fmt"
 	"log"
@@ -53,8 +54,12 @@ func main() {
 	e := echo.New()
 	connection.DatabaseConnect()
 
+	//middleware
+	e.Use(session.Middleware(sessions.NewCookieStore([]byte("session"))))
+
 	// Mengatur penanganan file static(jss,css,gambar)
 	e.Static("/public", "public")
+	e.Static("/uploads", "uploads")
 
 	e.Use(session.Middleware(sessions.NewCookieStore([]byte("session"))))
 
@@ -74,8 +79,8 @@ func main() {
 	e.POST("/submitregister", submitRegister)
 	e.POST("/submitlogin", submitLogin)
 	// e.POST("/", submitLogin)
-	e.POST("/", submitProject)
-	e.POST("/edit-project/:id", submitEditedProject)
+	e.POST("/", middleware.UploadFile(submitProject))
+	e.POST("/edit-project/:id", middleware.UploadFile(submitEditedProject))
 	e.POST("/delete-project/:id", deleteProject)
 	// e.POST("/login", logout)
 	// e.POST("/submitlogout", submitlogout)
@@ -325,7 +330,7 @@ func editProject(c echo.Context) error {
 
 	ProjectDetail := Project{}
 
-	errQuery := connection.Conn.QueryRow(context.Background(), "SELECT * FROM tb_project WHERE id=$1", idToInt).Scan(&ProjectDetail.Id, &ProjectDetail.ProjectName, &ProjectDetail.Description, &ProjectDetail.Image, &ProjectDetail.StartDate, &ProjectDetail.EndDate, &ProjectDetail.Technology)
+	errQuery := connection.Conn.QueryRow(context.Background(), "SELECT * FROM tb_project WHERE id=$1", idToInt).Scan(&ProjectDetail.Id, &ProjectDetail.ProjectName, &ProjectDetail.Description, &ProjectDetail.Image, &ProjectDetail.StartDate, &ProjectDetail.EndDate, &ProjectDetail.Technology, &ProjectDetail.author)
 
 	if errQuery != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())
@@ -382,7 +387,7 @@ func submitProject(c echo.Context) error {
 	session, _ := session.Get("session", c)
 
 	title := c.FormValue("input-name")
-	image := c.FormValue("input-image")
+	image := c.Get("dataFile").(string)
 	startdate := c.FormValue("startDate")
 	enddate := c.FormValue("endDate")
 	content := c.FormValue("input-description")
@@ -406,7 +411,7 @@ func submitEditedProject(c echo.Context) error {
 	// Menangkap Id dari Query Params
 	id := c.FormValue("id")
 	title := c.FormValue("input-name")
-	image := c.FormValue("input-image")
+	image := c.Get("dataFile").(string)
 	startdate := c.FormValue("startDate")
 	enddate := c.FormValue("endDate")
 	content := c.FormValue("input-description")
