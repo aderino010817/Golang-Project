@@ -4,7 +4,7 @@
     <title>Home</title>
     <link
       rel="shortcut icon"
-      href="public/images/rino.jpg"
+      href="public/images/favicon.png"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="public/css/style.css" />
@@ -26,6 +26,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary px-4 py-3" style="box-shadow: 2px 2px 9px 2px;">
       <div class="container-fluid">
         <a class="navbar-brand" target="_blank">
+          <img src="public/images/logo.png" />
         </a>
         <button
           class="navbar-toggler"
@@ -150,7 +151,7 @@
                 >{{$data.ProjectName}}</a
               >
             </p>
-            <div class="card-duration">Created by : [<em>{{$.FlashName}}</em>]<br>durasi: {{$data.Duration}}</div>
+            <div class="card-duration">Created by : [<em>{{$data.Id}}</em>]<br>durasi: {{$data.Duration}}</div>
             <p class="card-text my-2 text-truncate">{{$data.Description}}</p>
             <div class="d-flex gap-4 my-3" style="width: 100%">
               {{if $data.ReactJs}}
@@ -189,153 +190,9 @@
             </div>
           </div>
         </div>
-        {{else}}
-        {{if $.dataSession.NotLogin}}
-        <div class="card card-project">
-          <img src="public/images/{{$data.Image}}" alt="" />
-          <div class="card-title">
-            <p class="card-title fs-6 fw-bold mb-0">
-              <a href="project/{{$data.Id}}" target="_blank"
-                >{{$data.ProjectName}}</a
-              >
-            </p>
-            <div class="card-duration">durasi: {{$data.Duration}}</div>
-            <p class="card-text my-2 text-truncate">{{$data.Description}}</p>
-            <div class="d-flex gap-4 my-3" style="width: 100%">
-              {{if $data.ReactJs}}
-              <i class="fa-brands fa-react fa-2x"></i>
-              {{end}} {{if $data.NodeJs}}
-              <i class="fa-brands fa-node-js fa-2x"></i>
-              {{end}} {{if $data.Javascript}}
-              <i class="fa-brands fa-square-js fa-2x"></i>
-              {{end}} {{if $data.Golang}}
-              <i class="fa-brands fa-golang fa-2x"></i>
-              {{end}}
-            </div>
-            <div
-              class="btn-card-index d-flex justify-content-center gap-2"
-              style="width: 100%"
-            > {{if $.FlashStatus}}
-              <form
-                class="d-inline"
-                action="/edit-project/{{$data.Id}}"
-                method="GET"
-                style="width: 100%"
-              >
-                <button class="btn btn-dark" style="width: 100%">edit</button>
-              </form>
-              <form
-                class="d-inline"
-                action="/delete-project/{{$data.Id}}"
-                method="POST"
-                style="width: 100%"
-              >
-                <button class="btn btn-dark" style="width: 100%">delete</button>
-              </form>
-              {{else}}
-              <div style="display: none;"></div>
-              {{end}}
-            </div>
-          </div>
-          {{else}}
-          <div style="display: none;"></div>
-          {{end}}
           {{end}}
           {{end}}
         </div>
-   
-
-        <!-- <div class="card card-project">
-          <img src="public/images/img2.png" alt="" />
-          <div class="card-title">
-            <p class="card-title fs-6 fw-bold mb-0">
-              <a href="project/2" target="_blank">Dumbways Mobile App - 2021</a>
-            </p>
-            <div class="card-duration">durasi: 3 bulan</div>
-            <p class="card-text my-2">
-              App that is used by dumbways student, it was deployed and can be
-              downloaded on playstore. Happy download
-            </p>
-            <div class="d-flex gap-4 my-3" style="width: 100%">
-              <i class="fa-brands fa-google-play fs-3"></i>
-              <i class="fa-brands fa-android fs-3"></i>
-              <i class="fa-brands fa-java fs-3"></i>
-            </div>
-            <div class="btn-card-index d-flex gap-2" style="width: 100%">
-              <button class="btn btn-dark" style="width: 100%">edit</button>
-              <button class="btn btn-dark" style="width: 100%">delete</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card card-project">
-          <img src="public/images/img3.png" alt="" />
-          <div class="card-title">
-            <p class="card-title fs-6 fw-bold mb-0">
-              <a href="project/3" target="_blank">Dumbways Mobile App - 2021</a>
-            </p>
-            <div class="card-duration">durasi: 3 bulan</div>
-            <p class="card-text my-2">
-              App that is used by dumbways student, it was deployed and can be
-              downloaded on playstore. Happy download
-            </p>
-            <div class="d-flex gap-4 my-3" style="width: 100%">
-              <i class="fa-brands fa-google-play fs-3"></i>
-              <i class="fa-brands fa-android fs-3"></i>
-              <i class="fa-brands fa-java fs-3"></i>
-            </div>
-            <div class="btn-card-index d-flex gap-2" style="width: 100%">
-              <button class="btn btn-dark" style="width: 100%">edit</button>
-              <button class="btn btn-dark" style="width: 100%">delete</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card card-project">
-          <img src="public/images/img4.png" alt="" />
-          <div class="card-title">
-            <p class="card-title fs-6 fw-bold mb-0">
-              <a href="project/4" target="_blank">Dumbways Mobile App - 2021</a>
-            </p>
-            <div class="card-duration">durasi: 3 bulan</div>
-            <p class="card-text my-2">
-              App that is used by dumbways student, it was deployed and can be
-              downloaded on playstore. Happy download
-            </p>
-            <div class="d-flex gap-4 my-3" style="width: 100%">
-              <i class="fa-brands fa-google-play fs-3"></i>
-              <i class="fa-brands fa-android fs-3"></i>
-              <i class="fa-brands fa-java fs-3"></i>
-            </div>
-            <div class="btn-card-index d-flex gap-2" style="width: 100%">
-              <button class="btn btn-dark" style="width: 100%">edit</button>
-              <button class="btn btn-dark" style="width: 100%">delete</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card card-project">
-          <img src="public/images/img5.png" alt="" />
-          <div class="card-title">
-            <p class="card-title fs-6 fw-bold mb-0">
-              <a href="project/5" target="_blank">Dumbways Mobile App - 2021</a>
-            </p>
-            <div class="card-duration">durasi: 3 bulan</div>
-            <p class="card-text my-2">
-              App that is used by dumbways student, it was deployed and can be
-              downloaded on playstore. Happy download
-            </p>
-            <div class="d-flex gap-4 my-3" style="width: 100%">
-              <i class="fa-brands fa-google-play fs-3"></i>
-              <i class="fa-brands fa-android fs-3"></i>
-              <i class="fa-brands fa-java fs-3"></i>
-            </div>
-            <div class="btn-card-index d-flex gap-2" style="width: 100%">
-              <button class="btn btn-dark" style="width: 100%">edit</button>
-              <button class="btn btn-dark" style="width: 100%">delete</button>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
 
