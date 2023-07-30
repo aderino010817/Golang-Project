@@ -12,6 +12,7 @@ import (
 	"time"
 
 	"github.com/gorilla/sessions"
+	"github.com/jackc/pgx/v5"
 	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
 )
@@ -113,15 +114,28 @@ func register(c echo.Context) error {
 }
 
 func home(c echo.Context) error {
-	// var userData = SessionData{}
+	var userData = SessionData{}
 
 	tmpl, err := template.ParseFiles("views/index.html")
 	var user User
-
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
-	data, _ := connection.Conn.Query(context.Background(), "SELECT tb_project.id, project_name, description, image, start_date, end_date, technology, author_id FROM tb_project LEFT JOIN tb_akun ON tb_project.author_id = tb_akun.id ORDER BY tb_project.id DESC;")
+
+	session, _ := session.Get("session", c)
+	if session.Values["id"] != nil {
+		user.id = session.Values["id"].(int)
+		user.name = session.Values["name"].(string)
+	}
+
+	var data pgx.Rows
+
+	if user.id == 0 {
+		data, _ = connection.Conn.Query(context.Background(), "SELECT tb_project.id, project_name, description, image, start_date, end_date, technology, author_id FROM tb_project LEFT JOIN tb_akun ON tb_project.author_id = tb_akun.id ORDER BY tb_project.id DESC;")
+	} else {
+		data, _ = connection.Conn.Query(context.Background(), "SELECT tb_project.id, project_name, description, image, start_date, end_date, technology, author_id FROM tb_project LEFT JOIN tb_akun ON tb_project.author_id = tb_akun.id WHERE author_id=$1 ORDER BY tb_project.id DESC;", user.id)
+	}
+	fmt.Println(data)
 
 	dataProjects := []Project{}
 	for data.Next() {
@@ -150,11 +164,8 @@ func home(c echo.Context) error {
 		}
 
 		dataProjects = append(dataProjects, each)
-		fmt.Println(each.ProjectName)
+		// fmt.Println(each.ProjectName)
 	}
-
-	session, _ := session.Get("session", c)
-	session.Values["id"] = user.id
 
 	if session.Values["isLogin"] != true {
 		userData.isLogin = false
