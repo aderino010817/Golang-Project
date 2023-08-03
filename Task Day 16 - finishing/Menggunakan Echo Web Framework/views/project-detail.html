@@ -25,9 +25,6 @@
   <body class="bg-body-tertiary">
     <nav class="navbar navbar-expand-lg bg-body-tertiary px-4 py-3" style="box-shadow: 2px 2px 9px 2px;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="https://dumbways.id/" target="_blank">
-          <img src="/public/images/logo.png" />
-        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -55,8 +52,13 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center indukreglog">
+            {{if .FlashStatus}}
+            <a class="nav-link reglog" style="margin-right: 2em; margin-top: 0.5em;">hi {{.FlashName}}</a>
+            <a class="nav-link reglog" style="margin-right: 2em; margin-top: 0.5em;" href="/logout">Logout</a>
+            {{else}}
             <a class="nav-link reglog" style="margin-right: 2em; margin-top: 0.5em;" href="register">Register</a>
             <a class="nav-link reglog" style="margin-right: 2em; margin-top: 0.5em;" href="login">Login</a>
+            {{end}}
             <a class="btn btn-dark" href="contact" role="button">Contact Me</a>
           </div>
           </div>

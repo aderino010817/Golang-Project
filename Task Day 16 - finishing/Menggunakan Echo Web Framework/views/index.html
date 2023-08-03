@@ -4,7 +4,7 @@
     <title>Home</title>
     <link
       rel="shortcut icon"
-      href="public/images/favicon.png"
+      href="public/images/rino.jpg"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="public/css/style.css" />
@@ -25,9 +25,6 @@
   <body class="bg-body-tertiary">
     <nav class="navbar navbar-expand-lg bg-body-tertiary px-4 py-3" style="box-shadow: 2px 2px 9px 2px;">
       <div class="container-fluid">
-        <a class="navbar-brand" target="_blank">
-          <img src="public/images/logo.png" />
-        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -151,7 +148,7 @@
                 >{{$data.ProjectName}}</a
               >
             </p>
-            <div class="card-duration">Created by : [<em>{{$data.Id}}</em>]<br>durasi: {{$data.Duration}}</div>
+            <div class="card-duration">Created by : [<em>{{$.FlashName}}</em>]<br>durasi: {{$data.Duration}}</div>
             <p class="card-text my-2 text-truncate">{{$data.Description}}</p>
             <div class="d-flex gap-4 my-3" style="width: 100%">
               {{if $data.ReactJs}}
